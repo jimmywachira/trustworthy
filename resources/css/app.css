@@ -70,6 +70,14 @@ select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
 }
 
+@layer utilities {
+    .shadow-premium {
+        box-shadow:
+            0 16px 46px -28px rgb(15 23 42 / 0.28),
+            0 10px 18px -14px rgb(15 23 42 / 0.22);
+    }
+}
+
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */

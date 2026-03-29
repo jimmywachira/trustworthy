@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
@@ -58,6 +59,15 @@ class User extends Authenticatable
         $permissions = $this->permissions ?? [];
 
         return in_array('*', $permissions, true) || in_array($permission, $permissions, true);
+    }
+
+    /**
+     * Saved properties for this user.
+     */
+    public function savedProperties(): BelongsToMany
+    {
+        return $this->belongsToMany(Property::class, 'saved_properties')
+            ->withTimestamps();
     }
 
     /**

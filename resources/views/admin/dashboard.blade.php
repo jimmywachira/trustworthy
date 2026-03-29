@@ -1,5 +1,5 @@
 <x-admin.layout title="Admin Dashboard">
-    <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
         <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
             <p class="text-sm text-slate-500">Total Properties</p>
             <p class="mt-2 text-3xl font-semibold text-slate-900">{{ number_format($propertiesCount) }}</p>
@@ -15,6 +15,10 @@
         <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
             <p class="text-sm text-slate-500">Total Leads</p>
             <p class="mt-2 text-3xl font-semibold text-slate-900">{{ number_format($leadsCount) }}</p>
+        </article>
+        <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+            <p class="text-sm text-slate-500">Appointments</p>
+            <p class="mt-2 text-3xl font-semibold text-slate-900">{{ number_format($appointmentsCount) }}</p>
         </article>
     </section>
 

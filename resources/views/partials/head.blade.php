@@ -1,9 +1,28 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<script>
+    (function () {
+        const storageKey = 'trustworthy-theme';
+
+        try {
+            const stored = localStorage.getItem(storageKey);
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = stored ? stored === 'dark' : prefersDark;
+
+            document.documentElement.classList.toggle('dark', isDark);
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        } catch {
+            document.documentElement.classList.toggle('dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
+    })();
+</script>
+
 <title>
-    {{ filled($title ?? null) ? $title.' - '.config('app.name', 'Laravel') : config('app.name', 'Laravel') }}
+    {{ $seo['title'] ?? (filled($title ?? null) ? $title.' - '.config('app.name', 'Laravel') : config('app.name', 'Laravel')) }}
 </title>
+
+<x-seo.meta :seo="$seo ?? []" :title="$title ?? null" />
 
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">

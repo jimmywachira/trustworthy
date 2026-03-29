@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Appointment;
 use App\Models\Lead;
 use App\Models\Property;
 use Illuminate\Contracts\View\View;
@@ -19,6 +20,7 @@ class DashboardController extends Controller
             'availableCount' => Property::query()->where('status', 'available')->count(),
             'soldCount' => Property::query()->where('status', 'sold')->count(),
             'leadsCount' => Lead::query()->count(),
+            'appointmentsCount' => Appointment::query()->count(),
             'recentLeads' => Lead::query()->with('property')->latest()->take(6)->get(),
             'recentProperties' => Property::query()->latest()->take(6)->get(),
         ]);

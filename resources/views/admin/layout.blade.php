@@ -6,20 +6,26 @@
         <title>{{ $title ?? 'Admin' }} - {{ config('app.name') }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="min-h-screen bg-slate-100 text-slate-900 antialiased">
-        <div class="flex min-h-screen">
+    <body class="relative min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+        <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size-[6rem_4rem] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)]"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-linear-to-b from-emerald-500/8 to-transparent dark:from-emerald-500/15"></div>
+
+        <div class="relative z-10 flex min-h-screen">
             <aside class="hidden w-72 flex-col border-r font-semibold border-slate-200 bg-white p-5 lg:flex">
-                <a href="{{ route('admin.dashboard') }}" class="mb-8 text-lg font-semibold tracking-tight text-slate-900">LuxeNest Admin</a>
+                <a href="{{ route('admin.dashboard') }}" class="mb-8 inline-flex items-center gap-2 text-lg font-semibold tracking-tight text-slate-900">
+                    <ion-icon name="shield-checkmark-outline" class="h-5 w-5 text-emerald-600" aria-hidden="true"></ion-icon>
+                    LuxeNest Admin
+                </a>
 
                 <nav class="space-y-1 text-sm">
-                    <a href="{{ route('admin.dashboard') }}" class="block rounded-lg px-3 py-2 {{ request()->routeIs('admin.dashboard') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}">Dashboard</a>
-                    <a href="{{ route('admin.properties.index') }}" class="block rounded-lg px-3 py-2 {{ request()->routeIs('admin.properties.*') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}">Properties</a>
-                    <a href="{{ route('admin.leads.index') }}" class="block rounded-lg px-3 py-2 {{ request()->routeIs('admin.leads.*') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}">Leads</a>
-                    <a href="{{ route('admin.pages.edit') }}" class="block rounded-lg px-3 py-2 {{ request()->routeIs('admin.pages.*') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}">Page Content</a>
+                    <a href="{{ route('admin.dashboard') }}" class="inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 {{ request()->routeIs('admin.dashboard') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}"><ion-icon name="grid-outline" class="h-4 w-4" aria-hidden="true"></ion-icon>Dashboard</a>
+                    <a href="{{ route('admin.properties.index') }}" class="inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 {{ request()->routeIs('admin.properties.*') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}"><ion-icon name="business-outline" class="h-4 w-4" aria-hidden="true"></ion-icon>Properties</a>
+                    <a href="{{ route('admin.leads.index') }}" class="inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 {{ request()->routeIs('admin.leads.*') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}"><ion-icon name="people-outline" class="h-4 w-4" aria-hidden="true"></ion-icon>Leads</a>
+                    <a href="{{ route('admin.pages.edit') }}" class="inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 {{ request()->routeIs('admin.pages.*') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}"><ion-icon name="create-outline" class="h-4 w-4" aria-hidden="true"></ion-icon>Page Content</a>
                 </nav>
 
                 <div class="mt-auto space-y-3">
-                    <a href="{{ route('home') }}" class="block rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">View Site</a>
+                    <a href="{{ route('home') }}" class="inline-flex w-full items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"><ion-icon name="open-outline" class="h-4 w-4" aria-hidden="true"></ion-icon>View Site</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit" class="w-full rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-500">Sign Out</button>

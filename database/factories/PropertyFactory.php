@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Property;
+use App\Support\NairobiGeo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -23,6 +24,7 @@ class PropertyFactory extends Factory
 
         $city = fake()->randomKey($cityNeighborhoods);
         $neighborhood = fake()->randomElement($cityNeighborhoods[$city]);
+        $coordinates = NairobiGeo::coordinatesFor($neighborhood);
         $type = fake()->randomElement(['rent', 'sale']);
         $beds = fake()->numberBetween(1, 6);
 
@@ -36,6 +38,8 @@ class PropertyFactory extends Factory
                 : fake()->numberBetween(8500000, 220000000),
             'city' => $city,
             'neighborhood' => $neighborhood,
+            'latitude' => $coordinates['lat'],
+            'longitude' => $coordinates['lng'],
             'type' => $type,
             'beds' => $beds,
             'baths' => fake()->randomElement([1, 1.5, 2, 2.5, 3, 3.5, 4]),

@@ -60,7 +60,7 @@
 
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 @foreach ($featured as $property)
-                    <x-property-card :property="$property" />
+                    <x-property-card :property="$property" :is-saved="in_array($property->id, $savedPropertyIds, true)" />
                 @endforeach
             </div>
         </section>

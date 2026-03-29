@@ -9,6 +9,7 @@
                         <th class="px-4 py-3">Name</th>
                         <th class="px-4 py-3">Email</th>
                         <th class="px-4 py-3">Phone</th>
+                        <th class="px-4 py-3">Message</th>
                         <th class="px-4 py-3">Property</th>
                         <th class="px-4 py-3">Date</th>
                         <th class="px-4 py-3">Actions</th>
@@ -20,6 +21,7 @@
                             <td class="px-4 py-3 font-medium text-slate-900">{{ $lead->name }}</td>
                             <td class="px-4 py-3 text-slate-600">{{ $lead->email }}</td>
                             <td class="px-4 py-3 text-slate-600">{{ $lead->phone ?: 'N/A' }}</td>
+                            <td class="px-4 py-3 text-slate-600">{{ $lead->message ?: 'No message provided.' }}</td>
                             <td class="px-4 py-3 text-slate-600">{{ $lead->property?->title ?? 'N/A' }}</td>
                             <td class="px-4 py-3 text-slate-600">{{ $lead->created_at->format('M j, Y H:i') }}</td>
                             <td class="px-4 py-3">
@@ -32,7 +34,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" class="px-4 py-6 text-center text-slate-500">No leads captured yet.</td>
+                            <td colspan="7" class="px-4 py-6 text-center text-slate-500">No leads captured yet.</td>
                         </tr>
                     @endforelse
                 </tbody>

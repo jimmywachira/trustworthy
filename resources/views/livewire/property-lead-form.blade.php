@@ -24,9 +24,7 @@
                 </div>
                 <button @click="open = false" class="rounded-lg p-1 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700" type="button">
                     <span class="sr-only">Close</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
+                    <ion-icon name="close-outline" class="h-5 w-5" aria-hidden="true"></ion-icon>
                 </button>
             </div>
 

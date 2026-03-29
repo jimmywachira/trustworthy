@@ -17,6 +17,7 @@ class AdminPermissions
             'delete_properties' => 'Delete properties',
             'manage_leads' => 'View leads',
             'delete_leads' => 'Delete leads',
+            'manage_appointments' => 'View and update appointment status',
             'manage_content' => 'Edit marketing page content',
             'manage_admins' => 'Manage sub-admin users and permissions',
         ];
