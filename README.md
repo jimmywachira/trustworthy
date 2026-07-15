@@ -26,9 +26,9 @@ Set these in **Project Settings → Environment Variables**:
 
 Deployment is controlled by `vercel.json`:
 
-- `installCommand` installs PHP and Node dependencies
-- `buildCommand` builds Vite assets and runs Laravel optimization via `composer run vercel-build`
-- `api/index.php` boots Laravel for dynamic routes
+- `functions.api/index.php.runtime` uses `vercel-php@0.7.4` for Laravel requests
+- `installCommand` installs Node dependencies
+- `buildCommand` runs `vite build` so `public/build` is generated at deploy time
 - `/build/*` and other static assets are served from `public/`
 
 ### 4) Database migrations
