@@ -2,6 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "framework": null,
+  "installCommand": "composer install --no-dev --prefer-dist --optimize-autoloader && npm ci",
+  "buildCommand": "npm run build && composer run vercel-build",
   "builds": [
     { "src": "api/index.php", "use": "vercel-php@0.7.4" },
     { "src": "public/build/**", "use": "@vercel/static" },
@@ -9,6 +11,7 @@
   ],
   "routes": [
     { "src": "/build/(.*)", "dest": "/public/build/$1" },
+    { "src": "/(.*\\.(?:css|js|map|png|jpg|jpeg|gif|svg|ico|webp|avif|woff|woff2|ttf|eot))", "dest": "/public/$1" },
     { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
     { "src": "/(.*)", "dest": "/api/index.php" }
   ]
