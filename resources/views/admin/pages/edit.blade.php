@@ -1,7 +1,7 @@
 <x-admin.layout title="Manage Page Content">
     <p class="mb-4 text-sm text-slate-600">Update key marketing content without editing Blade templates.</p>
 
-    <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+    <div class="rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-slate-200">
         <form method="POST" action="{{ route('admin.pages.update') }}" class="space-y-5">
             @csrf
             @method('PUT')

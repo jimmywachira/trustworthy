@@ -1,4 +1,4 @@
-<header x-data="{ mobileOpen: false }" class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/88 shadow-sm backdrop-blur-lg transition-colors lg:bg-white/78 lg:backdrop-blur-xl dark:border-slate-800/90 dark:bg-slate-950/90 dark:lg:bg-slate-950/82">
+<header x-data="{ mobileOpen: false }" class="sticky top-0 z-40 border-b border-slate-200/80 backdrop-blur-md lg:backdrop-blur-lg dark:border-slate-800/90transition-colors  dark:border-slate-800/90 ">
     <div class="mx-auto max-w-7xl px-4 py-2.5 sm:px-6 sm:py-3 md:py-3.5 lg:px-8 lg:py-3.5 2xl:py-4">
         <div class="flex items-center gap-2.5 md:gap-3">
             <a href="{{ route('home') }}" class="text-lg font-semibold tracking-tight text-slate-900 dark:text-slate-100">LuxeNest</a>

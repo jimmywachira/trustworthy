@@ -1,5 +1,5 @@
 <x-admin.layout title="Manage Appointments">
-    <p class="mb-4 text-sm text-slate-600">Review viewing requests and update booking status for agents and clients.</p>
+    <p class="mb-4 text-lg text-slate-600">Review viewing requests and update booking status for agents and clients.</p>
 
     <div class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
         <div class="overflow-x-auto">

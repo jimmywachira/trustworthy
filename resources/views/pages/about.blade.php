@@ -1,7 +1,7 @@
 <x-layouts.marketing :title="'About Us - '.config('app.name')">
     <section class="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
         <div class="rounded-3xl bg-white p-8 shadow-premium ring-1 ring-slate-200 sm:p-10 dark:bg-slate-900 dark:ring-slate-800">
-            <p class="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300">Nairobi Real Estate Platform</p>
+            <p class="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-red-600 dark:bg-emerald-500/20 dark:text-emerald-300">Nairobi Real Estate Platform</p>
             <h1 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-100">About LuxeNest Kenya</h1>
             <p class="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">{{ $aboutIntro }}</p>
             <p class="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">{{ $aboutBody }}</p>

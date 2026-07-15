@@ -1,13 +1,13 @@
 <x-admin.layout title="Manage Properties">
     <div class="mb-4 flex items-center justify-between">
-        <p class="text-sm text-slate-600">Create, edit, and remove property listings.</p>
+        <p class="text-lg font-semibold text-green-500">Create, edit, and remove property listings.</p>
         <a href="{{ route('admin.properties.create') }}" class="rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500">Add Property</a>
     </div>
 
     <div class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
         <div class="overflow-x-auto">
             <table class="min-w-full text-left text-sm">
-                <thead class="bg-slate-50 text-slate-600">
+                <thead class="bg-slate-50 border-b border-slate-100 text-slate-600">
                     <tr>
                         <th class="px-4 py-3">Title</th>
                         <th class="px-4 py-3">Type</th>
@@ -23,7 +23,7 @@
                             <td class="px-4 py-3 font-medium text-slate-900">{{ $property->title }}</td>
                             <td class="px-4 py-3 uppercase text-slate-600">{{ $property->type }}</td>
                             <td class="px-4 py-3 uppercase text-slate-600">{{ $property->status }}</td>
-                            <td class="px-4 py-3"><x-price :amount="$property->price" /></td>
+                            <td class="px-4 py-3 text-slate-600"><x-price :amount="$property->price" /></td>
                             <td class="px-4 py-3 text-slate-600">{{ $property->city }}, {{ $property->neighborhood }}</td>
                             <td class="px-4 py-3">
                                 <div class="flex items-center gap-2">
